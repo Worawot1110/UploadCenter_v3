@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <header class="topbar">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+<div>
+          <img src="{{ url_for('static', filename='img/logo.png') }}"
+             class="logo">
+
+        
+
+            <h1>YONPIBOON UploadCenter</h1>
+
+            <p>Upload Images • Videos • Documents</p>
+
+              <!-- รูปเพิ่ม -->
+    <img class="brand-image"
+         src="{{ url_for('static', filename='img/your-image.png') }}"
+         alt="Brand Image">
+
+        </div>
+
+    </div>
+
+    <button id="theme-toggle" title="Dark / Light">
+
+        🌙
+
+    </button>
+
+<body>
+
+
+    <div class="container">
+
+     
+
+ <div id="drop-area">
+
+    <p>📂 ลากไฟล์มาวางที่นี่</p>
+
+    <p>หรือ</p>
+<input
+    type="file"
+    id="file"
+    multiple
+    hidden
+>
+
+<label for="file" class="file-button">
+    📁 เลือกไฟล์จากในเครื่อง
+</label>
+</div>
+
+<div class="upload-panel">
+
+    <div class="top-area">
+        <div id="drop-area"></div>
+
+        <div class="right-panel">
+            <button id="upload">⬆ Upload Files</button>
+            <div id="preview-info"></div>
+        </div>
+    </div>
+
+    <div id="preview-list"></div>
+
+</div>
+
+
+
+<div class="progress-area">
+    <div class="progress">
+    <div id="progress-bar"></div>
+</div>
+
+  <div class="progress-info">
+    <span id="progress-status">Waiting...</span>
+    <span id="progress-percent">0%</span>
+</div>
+
+    <script
+        src="{{ url_for('static', filename='js/upload.js') }}"
+    ></script>
+<div id="toast"></div>
+
+
+
+<div class="footer">
+    Powered by IT YONPIBOON v5.0
+    <br>
+    แจ้งปัญหา 088-9851564 เปา
+</div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,4 +1,16 @@
+import os
+
+try:
+    from config import HOST, PORT, MAX_UPLOAD_SIZE
+except ImportError:
+    HOST = os.getenv("HOST", "0.0.0.0")
+    PORT = int(os.getenv("PORT", 10000))
+    MAX_UPLOAD_SIZE = 1024 * 1024 * 1024
+
+
 from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
 
 from config import HOST, PORT, MAX_UPLOAD_SIZE
 from uploader import Uploader
@@ -95,5 +107,5 @@ if __name__ == "__main__":
     app.run(
         host=HOST,
         port=PORT,
-        debug=True
+        debug=False
     )

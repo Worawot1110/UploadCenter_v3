@@ -101,15 +101,10 @@ class Nextcloud:
             timeout=TIMEOUT
         )
 
-        share = self.create_share_link(filename)
-
-        return {
-            "success": r.status_code in (200, 201, 204),
-            "status": r.status_code,
-            "message": r.text,
-            "url": share,
-            "filename": filename
-        }
+        if r.status_code in (200, 201, 204):
+            share = self.create_share_link(filename)
+        else:
+            share = None
 
     # ==========================
     # URL ของไฟล์
